@@ -1,26 +1,21 @@
 <div>
   <div>
     <h1>
-      Movie #<%= @the_movie.id %> details
+      Movie details
     </h1>
 
     <div>
       <div>
-        <a href="/movies">
-          Go back
+        <%= link_to "Go back", movies_path %>
+      </div>
+
+      <div>    
+        <%= link_to "Edit Movie", edit_movie_path(@the_movie) %>
         </a>
       </div>
 
       <div>
-        <a href="/movies/<%= @the_movie.id %>/edit">
-          Edit movie
-        </a>
-      </div>
-
-      <div>
-        <a href="/movies/<%= @the_movie.id %>" data-turbo-method="delete">
-          Delete movie
-        </a>
+        <%= link_to "Delete movie", @the_movie, data: { turbo_method: :delete } %>
       </div>
     </div>
 
