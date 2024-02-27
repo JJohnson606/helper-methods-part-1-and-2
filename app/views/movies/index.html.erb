@@ -5,9 +5,14 @@
 <hr>
 
 <div>
-<%= link_to "Add a new movie", new_movie_path %>
+<%= link_to "Directors", directors_path %>
 </div>
 
+<hr>
+
+<div>
+<%= link_to "Add a new movie", new_movie_path %>
+</div>
 <hr>
 
 <table>
@@ -36,7 +41,7 @@
     </th>
   </tr>
 
-  <% @list_of_movies.each do |a_movie| %>
+  <% @movies.each do |a_movie| %>
   <tr>
     <td>
       <%= a_movie.id %>

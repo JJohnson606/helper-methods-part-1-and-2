@@ -1,0 +1,34 @@
+<div style="color: orange">
+  <%= link_to "Movies", movies_path %>
+</div>
+
+<p style="color: green"><%= notice %></p>
+
+
+
+<h1>List of all directors</h1>
+<%= link_to "Add a new director", new_director_path %>
+<hr>
+
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Bio</th>
+    <th>Created at</th>
+    <th>Updated at</th>
+    <th></th>
+  </tr>
+
+  <% @directors.each do |director| %>
+    <tr>
+      <td><%= director.id %></td>
+      <td><%= director.name %></td>
+      <td><%= director.bio %></td>
+      <td><%= time_ago_in_words(director.created_at) %> ago</td>
+      <td><%= time_ago_in_words(director.updated_at) %> ago</td>
+      <td><%= link_to "Show details", director %></td>
+    </tr>
+  <% end %>
+</table>

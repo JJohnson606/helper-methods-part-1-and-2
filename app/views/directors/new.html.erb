@@ -1,0 +1,28 @@
+<h1>New director</h1>
+
+<%= render "form", director: @director %>
+
+<%= form_with(model: @director, data: { turbo: false }) do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :bio %>
+    <%= form.text_area :bio, rows: 3 %>
+  </div>
+
+  <div>
+    <%= form.label :date_of_birth %>
+    <%= form.date_field :date_of_birth %>
+  </div>
+
+  <%= form.submit "Create director" %>
+<% end %>
+
+<br>
+
+<div>
+  <%= link_to "Back to directors", directors_path %>
+</div>
